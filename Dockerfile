@@ -27,7 +27,7 @@
 #
 # Notes
 # -----
-# * AutoGluon is large (~2 GB installed). The first build will take several minutes.
+# * ML dependencies are large (~2 GB installed). The first build will take several minutes.
 # * GPU training requires the NVIDIA Container Toolkit on the host.
 # * The trained models/ directory is NOT baked into the image (gitignored).
 #   Mount it at runtime with -v $(pwd)/models:/app/models.

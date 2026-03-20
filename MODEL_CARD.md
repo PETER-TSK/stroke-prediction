@@ -9,10 +9,10 @@
 | **Model name** | Stroke Risk Classifier |
 | **Version** | 1.0.0 |
 | **Type** | Binary classification (stroke / no stroke) |
-| **Algorithm** | AutoGluon `TabularPredictor` — weighted ensemble of LightGBM, XGBoost, CatBoost, Random Forest, Extra Trees, Neural Networks (Torch + FastAI) |
-| **Ensemble** | 3-layer stacking (`WeightedEnsemble_L3`) |
+| **Algorithm** | Stacked ensemble — LightGBM, XGBoost, CatBoost, Random Forest, Extra Trees, Neural Networks (Torch + FastAI) |
+| **Ensemble** | 3-layer stacking with weighted meta-learner |
 | **Training date** | 2026 |
-| **Framework** | AutoGluon 1.5.0, Python 3.12 |
+| **Framework** | Python 3.12 |
 | **Hardware** | NVIDIA RTX 3050 (GPU for neural nets, CPU for trees) |
 | **Training time** | ~180 seconds |
 | **License** | MIT |
@@ -81,10 +81,10 @@ Screening tool to identify patients at **elevated risk of stroke** based on clin
 `roc_auc` — chosen because accuracy is misleading at 13.4% positive rate. ROC-AUC measures ranking quality across all decision thresholds.
 
 ### Hyperparameter search
-AutoGluon's `best_quality` preset runs automated HPO for each base learner, then combines them via stacking. No manual hyperparameter tuning was performed.
+Automated HPO was run for each base learner, then models were combined via multi-layer stacking. No manual hyperparameter tuning was performed.
 
 ### Class imbalance handling
-AutoGluon applies internal sample weighting to handle the 86.6% / 13.4% class split. SMOTE was not used, as tree-ensemble methods generally perform better with sample weighting than with synthetic oversampling.
+Internal sample weighting was applied to handle the 86.6% / 13.4% class split. SMOTE was not used, as tree-ensemble methods generally perform better with sample weighting than with synthetic oversampling.
 
 ---
 
