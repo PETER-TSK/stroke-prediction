@@ -11,7 +11,7 @@
 | **Type** | Binary classification (stroke / no stroke) |
 | **Algorithm** | AutoGluon `TabularPredictor` — weighted ensemble of LightGBM, XGBoost, CatBoost, Random Forest, Extra Trees, Neural Networks (Torch + FastAI) |
 | **Ensemble** | 3-layer stacking (`WeightedEnsemble_L3`) |
-| **Training date** | 2024 |
+| **Training date** | 2026 |
 | **Framework** | AutoGluon 1.5.0, Python 3.12 |
 | **Hardware** | NVIDIA RTX 3050 (GPU for neural nets, CPU for trees) |
 | **Training time** | ~180 seconds |
