@@ -1,0 +1,8 @@
+{
+  "roc_auc": 0.9209,
+  "average_precision": 0.7482,
+  "f1_macro": 0.7819,
+  "f1_stroke": 0.6079,
+  "accuracy": 0.9207,
+  "positive_rate_true": 0.1337
+}
